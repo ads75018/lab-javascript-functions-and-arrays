@@ -13,13 +13,13 @@ console.log(maxOfTwoNumbers(23, 43))
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord(array){
-  let toto = '';
-  if(array.length===0) {
-    return null
+function findLongestWord(array) {
+  let toto = "";
+  if (array.length === 0) {
+    return null;
   }
-  for (let i=0; i < array.length; i++){
-    if(toto.length<array[i].length) {
+  for (let i = 0; i < array.length; i++) {
+    if (toto.length < array[i].length) {
       toto = array[i];
     }
   }
@@ -31,22 +31,22 @@ findLongestWord(words);
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 function sumNumbers(array) {
-  let tutu = 0; 
-  if(array===0) {
-    return null
+  let tutu = 0;
+  if (array === 0) {
+    return null;
   }
-  for (let i=0; i< array.length; i++){
-    tutu += array[i]
+  for (let i = 0; i < array.length; i++) {
+    tutu += array[i];
   }
   return tutu;
 }
 
-sumNumbers(numbers)
+sumNumbers(numbers);
 
 // BONUS
-/*
-const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
 
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
+/*
 function sum(array) {
   let titi = 0;
   array.forEach(function(el){
@@ -78,12 +78,12 @@ console.log(sum(mixedArr));
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function sumNumbers(array) {
-  let tutu = 0; 
-  if(array===0) {
-    return null
+  let tutu = 0;
+  if (array === 0) {
+    return null;
   }
-  for (let i=0; i< array.length; i++){
-    tutu += array[i]
+  for (let i = 0; i < array.length; i++) {
+    tutu += array[i];
   }
   return tutu;
 }
@@ -91,35 +91,28 @@ function sumNumbers(array) {
 //console.log(sumNumbers(numbersAvg)/numbersAvg.length)
 
 function averageNumbers(array) {
-  return (sumNumbers(array)/array.length)
+  return sumNumbers(array) / array.length;
 }
-console.log(averageNumbers(numbersAvg))
-
-/*
-function averageNumbers (array) {
-  (sumNumbers(array) / array.length)
-}Ò
-console.log(averageNumbers(numbersAvg))
-*/
+console.log(averageNumbers(numbersAvg));
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
 function sumArray(array) {
   let sum = 0;
-  if(array===0) {
-    return null
+  if (array === 0) {
+    return null;
   }
   for (let i = 0; i < array.length; i++) {
     sum += array[i].length;
   }
-  return sum
+  return sum;
 }
 
 function averageWordLength(array) {
-  return Math.round(sumArray(array)/array.length)
+  return Math.round(sumArray(array) / array.length);
 }
-console.log(averageWordLength(wordsArr))
+console.log(averageWordLength(wordsArr));
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -136,23 +129,61 @@ const wordsUnique = [
   'bring'
 ];
 
+function uniquifyArray(array) {
+  let resArray = [];
+  if (array === "") {
+    return null;
+  }
+  for (let i = 0; i < array.length; i++) {
+    if (resArray.indexOf(array[i]) === -1 && array[i] !== "") {
+      resArray.push(array[i]);
+    }
+  }
+  return resArray;
+}
+console.log(uniquifyArray(wordsUnique));
+
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
+
+function doesWordExist(array, word) {
+  let result = "";
+  if (array === "") {
+    return null;
+  }
+  for (let i = 0; i < array.length; i++) {
+    if (
+      result.indexOf(array[i]) === -1 &&
+      array[i] !== "" &&
+      array.includes(word) === true
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  return result;
+}
+
+console.log(doesWordExist(wordsFind, "hello"));
+
 // Iteration #7: Count repetition
 const wordsCount = [
-  'machine',
-  'matter',
-  'subset',
-  'trouble',
-  'starting',
-  'matter',
-  'eating',
-  'matter',
-  'truth',
-  'disobedience',
-  'matter'
+  "machine",
+  "matter",
+  "subset",
+  "trouble",
+  "starting",
+  "matter",
+  "eating",
+  "matter",
+  "truth",
+  "disobedience",
+  "matter",
 ];
+
+
 
 // Iteration #8: Bonus
 

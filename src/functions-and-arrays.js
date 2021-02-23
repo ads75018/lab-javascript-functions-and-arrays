@@ -183,6 +183,18 @@ const wordsCount = [
   "matter",
 ];
 
+function howManyTimes(array, word) {
+  let result = 0;
+   for (let i = 0; i < array.length; i++) {
+     if(array.includes(word) === true) {
+       return result += 1
+     } else {
+       return result = 0
+     }
+   }
+  return result
+}
+console.log(howManyTimes(wordsCount, 'machine'))
 
 
 // Iteration #8: Bonus
